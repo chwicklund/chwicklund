@@ -2,34 +2,46 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/dark-mode.css">
+    <link href="css/pages.css" rel="stylesheet">
+
     <meta charset="UTF-8">
     <title>About</title>
 </head>
-<body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
-            <img src="../img/Face.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-            Charles Wicklund
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="about.html">About <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="photos.html">Photos</a>
-                </li>
-            </ul>
+<body class="text-center">
+
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h3 class="masthead-brand">Charles Wicklund</h3>
+            <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="photos.html">Photos</a>
+                <a class="nav-link active" href="about.html">About</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">About Me</h1>
+        <img src="../img/Face.png">
+        <p class="lead">I am a second year IT student at NJIT specializing in web application development. This website was coded with HTML and uses CSS stylesheets. Framework provided by Bootstrap.</p>
+        </main>
+
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>Follow <a href="https://instagram.com/chucksflix">@chucksflix</a> on Instagram</p>
+        </div>
+    </footer>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../../../assets/js/vendor/popper.min.js"></script>
+<script src="../../../../dist/js/bootstrap.min.js"></script>
 </body>
 </html>
