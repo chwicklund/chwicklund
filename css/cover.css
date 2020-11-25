@@ -110,6 +110,7 @@ body {
   -o-background-size: cover;
   background-color: #cccccc;
   background-size: cover;
+  overflow-y: scroll;
 }
 
 
