@@ -1,0 +1,476 @@
+/* Colour tokens live in palettes.css (generated). All text is the cream (--ink); --deco carries no text. */
+:root {
+  /* Montserrat in heavy capitals names things; Quicksand carries the running text. */
+  --font-display: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-text: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
+
+  /* The five sizes on the page. */
+  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  --step-lead: clamp(1.1875rem, 1.05rem + 0.6vw, 1.5rem);
+  --step-head: clamp(2rem, 0.9rem + 3.4vw, 4rem);
+  --step-display: clamp(3.25rem, 6.8vw, 7rem);
+
+  --margin: 12px;
+  --col-pad: clamp(24px, 4vw, 64px);
+  --gap-section: clamp(120px, 13vw, 200px);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --t-press: 140ms;
+  --t-hover: 180ms;
+  --t-ui: 240ms;
+  --stagger-item: 80ms;
+
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  transition: background-color 400ms ease;
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: var(--step-body);
+  font-weight: 500;
+  line-height: 1.6;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p, ul, dl, dd, figure { margin: 0; }
+ul { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+button, input { font: inherit; color: inherit; }
+::selection { background: var(--accent); color: var(--ink); }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.visually-hidden, .skip:not(:focus) {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+.skip:focus {
+  position: fixed; left: 24px; top: 24px; z-index: 20;
+  background: var(--accent); color: var(--accent-ink); padding: 0.75em 1.25em; border-radius: 999px;
+}
+
+/* Type roles: block capitals for everything that names something. */
+.hero__name, .section-title, .names__name, .menu a, .button, .card__links,
+.letter__signoff, .footer__wordmark { font-family: var(--font-display); }
+.section-title {
+  font-size: var(--step-lead); font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.01em; line-height: 1.2;
+}
+.lead { font-size: var(--step-lead); line-height: 1.45; max-width: 32ch; }
+
+/* Controls: every button is fully round, decided once. */
+.button {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 52px; padding: 0 1.4em;
+  border: 0; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: 1.1875rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em;
+  text-decoration: none; cursor: pointer;
+  transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease, color var(--t-hover) ease;
+}
+.button:active { transform: scale(0.97); }
+
+.link {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 0.08em;
+  transition: text-decoration-color var(--t-hover) ease, color var(--t-hover) ease;
+}
+.link--strong { text-decoration-color: currentColor; font-weight: 700; }
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover { background: var(--accent-strong); }
+  .link:hover { text-decoration-color: currentColor; }
+  .link--strong:hover { text-decoration-color: var(--deco); }
+}
+
+/* Film perforations: the card's band, and a thin strip above the footer. */
+.film {
+  display: flex; gap: 14px; align-items: center;
+  height: 56px; padding: 0 14px; overflow: hidden;
+  background: var(--bg);
+}
+.film span { flex: 0 0 18px; height: 26px; background: var(--deco); }
+.film--thin { grid-column: 1 / -1; height: 8px; padding: 0; gap: 28px; }
+.film--thin span { flex-basis: 28px; height: 100%; }
+
+/* ---------------------------------------------------------------
+   The split: a fixed stage beside a scrolling column
+---------------------------------------------------------------- */
+.split {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--margin);
+  padding: 0 var(--margin);
+}
+.split--letters { grid-template-columns: 47fr 53fr; }
+
+.split__stage {
+  position: sticky; top: 0; align-self: start;
+  height: 100svh;
+  padding: var(--margin) 0;
+}
+.split__col { min-width: 0; }
+
+.stage { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--surface); }
+
+.frame { position: absolute; inset: 0; opacity: 0; transition: opacity 500ms var(--ease-out); }
+.frame.is-active { opacity: 1; }
+.frame__photo { width: 100%; height: 100%; object-fit: cover; }
+
+.frame__object {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  padding: clamp(20px, 3vw, 48px);
+}
+.frame__object img { width: 100%; height: auto; }
+.frame__code {
+  margin: 0; width: 100%; max-width: 40rem;
+  padding: clamp(20px, 2.4vw, 36px);
+  background: var(--bg);
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: clamp(0.8125rem, 0.6rem + 0.55vw, 1.1875rem);
+  line-height: 1.6; color: var(--ink);
+  white-space: pre-wrap; overflow-wrap: anywhere;
+}
+.frame__table {
+  width: 100%; max-width: 40rem;
+  border-collapse: collapse;
+  background: var(--bg);
+  font-size: var(--step-small);
+}
+.frame__table th, .frame__table td {
+  padding: 0.85em 1.2em; text-align: left; vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+.frame__table th { color: var(--muted); font-weight: 500; }
+.frame__table tr:last-child th, .frame__table tr:last-child td { border-bottom: 0; }
+
+.stage__caption {
+  position: absolute; left: 20px; top: 20px; z-index: 2;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  max-width: calc(100% - 40px);
+}
+.stage__caption p {
+  background: var(--bg); color: var(--ink);
+  font-size: var(--step-small); line-height: 1; padding: 1em 1.25em; border-radius: 999px;
+}
+
+/* ---------------------------------------------------------------
+   Hero: the card beside the photograph
+---------------------------------------------------------------- */
+.hero { height: 100svh; min-height: 600px; padding: var(--margin) 0; view-timeline-name: --hero; }
+.card {
+  height: 100%;
+  display: flex; flex-direction: column;
+  background: var(--surface);
+}
+.card__body {
+  flex: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 32px; padding: 48px var(--col-pad);
+  text-align: center;
+}
+.hero__name {
+  font-size: var(--step-display); font-weight: 800;
+  text-transform: uppercase; letter-spacing: -0.03em; line-height: 0.9;
+}
+.hero__name span { display: block; }
+.hero__sentence { font-size: var(--step-lead); line-height: 1.45; max-width: 34ch; margin-top: -8px; }
+.card__links {
+  display: flex; justify-content: center; gap: 28px; flex-wrap: wrap;
+  padding: 0 24px 28px;
+  font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.card__links a { padding: 10px 0; }
+
+/* ---------------------------------------------------------------
+   Projects: the names are the index
+---------------------------------------------------------------- */
+.projects { padding: var(--gap-section) var(--col-pad); }
+.projects__intro { margin-top: 24px; }
+
+.names { margin-top: 64px; }
+.names__item { padding: 6svh 0; }
+.names__row { display: grid; gap: 10px; }
+.names__name {
+  font-size: clamp(2rem, 0.6rem + 3vw, 3.5rem); font-weight: 800;
+  text-transform: uppercase; letter-spacing: -0.02em; line-height: 1;
+  text-decoration: underline 0.12em transparent;
+  text-underline-offset: 0.14em;
+  transition: transform var(--t-ui) var(--ease-out), text-decoration-color var(--t-hover) ease;
+}
+.names__item.is-active .names__name { text-decoration-color: var(--deco); }
+.names__what { font-size: var(--step-small); color: var(--muted); }
+.names__detail { display: grid; gap: 12px; max-width: 46ch; margin-top: 20px; }
+.names__role { font-weight: 700; }
+.names__stack { font-size: var(--step-small); }
+@media (hover: hover) and (pointer: fine) {
+  .names__item.is-active .names__name { transform: translateX(8px); }
+}
+.project__inline { display: none; }
+
+/* ---------------------------------------------------------------
+   Photos: the full-width drag row
+---------------------------------------------------------------- */
+.photos {
+  margin-top: 0;
+  padding: 120px 0;
+  background: var(--field);
+  --row-h: 68svh;
+  --row-gap: 12px;
+  --edge: calc(var(--margin) + var(--col-pad));
+}
+.photos__head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 0 var(--edge); margin-bottom: 32px;
+}
+.photos .section-title { font-size: var(--step-head); letter-spacing: -0.02em; line-height: 1; }
+.photos__count { font-size: var(--step-lead); font-weight: 700; }
+/* The field colour of some palettes only carries large text, so everything here is set large and bold. */
+.photos__intro { padding: 0 var(--edge); margin: -8px 0 40px; max-width: calc(40ch + 2 * var(--edge)); font-size: var(--step-lead); font-weight: 700; line-height: 1.4; }
+
+.photos__row {
+  display: flex; gap: var(--row-gap);
+  height: var(--row-h);
+  padding: 0 var(--edge);
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity; scroll-padding-inline: var(--edge);
+  scrollbar-width: none; cursor: grab;
+}
+.photos__row::-webkit-scrollbar { display: none; }
+.photos__row.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+.photos__row.is-dragging img { pointer-events: none; }
+
+.module { flex: 0 0 auto; height: 100%; display: flex; flex-direction: column; gap: var(--row-gap); scroll-snap-align: start; }
+.module--tall { aspect-ratio: 3 / 4; }
+.module--wide { aspect-ratio: 16 / 10; }
+.module--pair { width: calc((var(--row-h) - var(--row-gap)) / 2 * 4 / 3); }
+.module .shutter { flex: 1; min-height: 0; overflow: hidden; }
+.module img { width: 100%; height: 100%; object-fit: cover; user-select: none; }
+
+
+/* ---------------------------------------------------------------
+   About: the letter
+---------------------------------------------------------------- */
+.about { padding: var(--gap-section) var(--col-pad) 0; }
+.letter { max-width: 520px; margin: 0 auto; display: grid; gap: 1.5em; line-height: 1.65; }
+.letter__portrait { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.letter mark { background: none; color: var(--ink); font-weight: 700; text-decoration: underline 0.3em var(--deco); text-underline-offset: -0.05em; text-decoration-skip-ink: none; }
+.letter__signoff { font-size: var(--step-lead); font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; margin-top: 0.4em; }
+.letter__role { font-size: var(--step-small); color: var(--muted); margin-top: -1.3em; }
+
+/* ---------------------------------------------------------------
+   Contact: one field
+---------------------------------------------------------------- */
+.contact { padding: 200px var(--col-pad) 160px; }
+.contact > * { max-width: 520px; margin-inline: auto; }
+.contact__prompt { font-size: var(--step-lead); font-weight: 700; line-height: 1.35; }
+.contact__prompt span { display: block; }
+.contact__muted { color: var(--muted); }
+
+.contact__form { position: relative; margin-top: 28px; }
+.contact__form input[type='text'] {
+  width: 100%; height: 64px;
+  padding: 0 64px 0 26px;
+  border: 2px solid var(--deco); border-radius: 999px;
+  background: var(--surface); color: var(--ink);
+  font-size: var(--step-body);
+  outline: 2px solid transparent; outline-offset: 2px;
+  transition: outline-color var(--t-hover) ease;
+}
+.contact__form input::placeholder { color: var(--placeholder); opacity: 1; }
+.contact__form input:focus { outline-color: var(--ink); }
+.contact__send {
+  position: absolute; right: 10px; top: 10px;
+  width: 44px; height: 44px; border: 0; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--accent); color: var(--accent-ink); cursor: pointer;
+  transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease;
+}
+.contact__send:active { transform: scale(0.94); }
+.contact__send svg { transition: transform var(--t-ui) var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .contact__send:hover { background: var(--accent-strong); }
+  .contact__send:hover svg { transform: translateX(2px); }
+}
+.contact__after { margin-top: 16px; font-size: var(--step-small); color: var(--muted); }
+
+.contact__rows { margin-top: 72px; display: grid; gap: 14px; font-size: var(--step-small); }
+.contact__rows div { display: grid; grid-template-columns: 8rem 1fr; gap: 16px; }
+.contact__rows dt { color: var(--muted); }
+
+/* ---------------------------------------------------------------
+   Footer: photograph half, menu half
+---------------------------------------------------------------- */
+.footer {
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr;
+  min-height: 100svh;
+}
+.footer__photo { position: relative; overflow: hidden; }
+.footer__photo img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 64% 42%;
+  transform: scale(1.5); transform-origin: 64% 42%;
+}
+.footer__menu {
+  background: var(--surface);
+  display: flex; flex-direction: column;
+  padding: 80px 24px 24px clamp(32px, 8vw, 140px);
+}
+.footer__wordmark { font-size: var(--step-small); font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 48px; }
+.menu { display: grid; gap: 12px; }
+.menu a {
+  display: inline-block;
+  font-size: var(--step-head); font-weight: 800; text-transform: uppercase;
+  line-height: 1.05; letter-spacing: -0.02em;
+  text-decoration: none;
+  transition: transform var(--t-ui) var(--ease-out), color var(--t-hover) ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .menu:hover a { color: var(--muted); }
+  .menu a:hover { color: var(--ink); transform: translateX(12px); }
+}
+.footer__blocks { display: flex; gap: 64px; margin-top: 64px; font-size: 15px; flex-wrap: wrap; }
+.footer__blocks h3 { font-size: var(--step-small); font-weight: 500; color: var(--muted); margin-bottom: 6px; }
+.footer__legal { margin-top: auto; padding-top: 48px; font-size: var(--step-small); color: var(--muted); }
+
+/* ---------------------------------------------------------------
+   Phone and tablet (and phones held sideways, which are wide but short)
+---------------------------------------------------------------- */
+@media (max-width: 900px), (max-height: 520px) and (orientation: landscape) {
+  .split, .split--letters { grid-template-columns: 1fr; gap: 0; }
+  .split__stage {
+    position: relative; order: -1;
+    height: 48svh; min-height: 300px;
+    padding: var(--margin) 0 0;
+  }
+  .split--letters .split__stage { height: 50svh; }
+
+  /* The card follows the photograph and overlaps its bottom edge. */
+  .hero { height: auto; min-height: 0; padding: 0; margin-top: -24px; position: relative; z-index: 2; }
+  .film { height: 40px; }
+  .film span { flex-basis: 14px; height: 20px; }
+  .card__body { gap: 24px; padding: 40px 20px 32px; }
+  .hero__name { font-size: min(14.2vw, 6rem); }
+  .card__links { gap: 20px; padding-bottom: 20px; }
+
+  .projects { padding: 96px 20px; }
+  .names { margin-top: 32px; }
+  .names__item { padding: 20px 0; }
+  .names__name { color: var(--ink); }
+  .names__item + .names__item { margin-top: 20px; }
+  .names__row { flex-direction: column; gap: 6px; }
+  .names__name { font-size: min(7.4vw, 3rem); }
+  .names__item.is-active .names__name { transform: none; }
+  .project__inline { display: block; position: relative; background: var(--surface); margin-bottom: 20px; }
+  .project__inline .frame__object { position: static; }
+  .project__inline .frame__object { padding: 16px; }
+  .project__inline .frame__code { font-size: 0.75rem; padding: 14px; }
+  .project__inline .frame__code, .project__inline .frame__table { max-width: none; }
+  .project__inline .frame__table { font-size: 0.75rem; }
+  .project__inline .frame__table th, .project__inline .frame__table td { padding: 0.45em 0.8em; }
+
+  .photos { --row-h: 62svh; --row-gap: 8px; --edge: 20px; padding: 80px 0; margin-top: 0; }
+  .module--tall { aspect-ratio: auto; width: 72vw; }
+  .module--pair { width: 64vw; }
+  .module--wide { aspect-ratio: auto; width: 88vw; height: 64%; align-self: center; }
+
+  .about { padding: 72px 20px 0; }
+  .letter { max-width: 36rem; margin-inline: 0; }
+  .contact { padding: 120px 20px 96px; }
+  .contact > * { max-width: 36rem; margin-inline: 0; }
+  .contact__rows div { grid-template-columns: 1fr; gap: 2px; }
+  .contact__rows { gap: 20px; }
+  .contact__form input[type='text'] { height: 60px; }
+  .contact__send { top: 8px; right: 8px; }
+
+  .footer { grid-template-columns: 1fr; min-height: 0; }
+  .footer__photo { height: 50svh; }
+  .footer__menu { padding: 48px 20px 20px; }
+  .menu { gap: 4px; }
+  .menu a { font-size: min(9vw, 3rem); min-height: 48px; display: flex; align-items: center; }
+  .footer__blocks a { display: inline-block; padding: 10px 0; }
+  .contact__rows a { display: inline-block; padding: 12px 0; margin: -12px 0; }
+  .footer__blocks { flex-direction: column; gap: 24px; margin-top: 48px; }
+}
+
+/* Tablets in the stacked layout: the reading column sits centred, with equal margins. */
+@media (min-width: 601px) and (max-width: 900px) {
+  .projects, .about, .contact { padding-inline: max(20px, (100% - 40rem) / 2); }
+  .letter, .contact > *, .names__detail { max-width: none; }
+  .photos { --edge: max(20px, (100% - 40rem) / 2); }
+  .footer__menu { padding-inline: max(20px, (100% - 40rem) / 2); }
+}
+
+@media (max-width: 600px) {
+  .photos__head { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+/* Narrow phones: settings tables stack each label above its value. */
+@media (max-width: 420px) {
+  .frame__table tr { display: grid; padding: 0.6em 0.9em; border-bottom: 1px solid var(--line); }
+  .frame__table tr:last-child { border-bottom: 0; }
+  .frame__table th, .project__inline .frame__table th, .frame__table td, .project__inline .frame__table td { padding: 0; border: 0; }
+}
+
+/* ---------------------------------------------------------------
+   Motion
+---------------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  /* Entrances: heading, then text, then picture, once per element. */
+  .js [data-reveal] {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-expo);
+    transition-delay: calc(var(--d, 0) * var(--stagger-item));
+  }
+  .js [data-reveal].is-in { opacity: 1; transform: none; }
+
+  /* The name's lines rise in on load. */
+  .hero__name span { animation: rise 1100ms var(--ease-expo) both; }
+  .hero__name span + span { animation-delay: 90ms; }
+  @keyframes rise { from { opacity: 0; transform: translateY(0.35em); } }
+
+  /* The perforations run past like film through a camera, slowly. */
+  .film:not(.film--thin) span { animation: advance 6s linear infinite; }
+  @keyframes advance { to { transform: translateX(-32px); } }
+
+  /* The module is observed, not the shutter: a fully clipped element never counts as visible. */
+  .js .shutter { clip-path: inset(100% 0 0 0); transition: clip-path 1100ms var(--ease-in-out); }
+  .js .shutter + .shutter { transition-delay: var(--stagger-item); }
+  .js .shutter img { transform: scale(1.12); transition: transform 1500ms var(--ease-soft); }
+  .js .is-in .shutter { clip-path: inset(0); }
+  .js .is-in .shutter img { transform: none; }
+  @media (hover: hover) and (pointer: fine) {
+    .js .is-in .shutter:hover img { transform: scale(1.03); transition-duration: 600ms; }
+  }
+
+  /* The stage: a new frame settles from a slight zoom, and the photographs drift while held. */
+  .frame img { transform: scale(1.06); transition: transform 1400ms var(--ease-soft); }
+  .frame.is-active img { transform: none; }
+  .frame--photo.is-active .frame__photo { animation: drift 24s var(--ease-soft) 1.4s infinite alternate; }
+  @keyframes drift { from { transform: scale(1); } to { transform: scale(1.06) translate(-1%, -1%); } }
+
+  /* Signature: the name settles as the first screen leaves. */
+  @supports (animation-timeline: view()) {
+    .hero__name { animation: name-settle linear both; animation-timeline: --hero; animation-range: exit 0% exit 100%; }
+    @keyframes name-settle { from { transform: scale(1); } to { transform: scale(0.93); } }
+    .footer__photo img { animation: footer-drift linear both; animation-timeline: view(); }
+    @keyframes footer-drift { from { transform: scale(1.58); } to { transform: scale(1.46); } }
+  }
+}
