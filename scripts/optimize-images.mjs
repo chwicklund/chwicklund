@@ -1,7 +1,7 @@
 // Turns the full-resolution originals in photos/ into web-sized copies in public/img/.
 // Run with `npm run images` after adding or replacing a photo in photos/.
 import sharp from 'sharp'
-import { readdir, mkdir, writeFile, readFile } from 'node:fs/promises'
+import { readdir, mkdir, writeFile, readFile, unlink } from 'node:fs/promises'
 import { join, parse } from 'node:path'
 
 const SRC = 'photos'
@@ -21,6 +21,13 @@ for (const file of files) {
     await image.clone().resize({ width: Math.min(w, width) }).webp({ quality: 78 }).toFile(join(OUT, `${name}-${w}.webp`))
   }
   console.log(`${file} → ${WIDTHS.length} sizes`)
+}
+
+// Web copies whose original has been removed from photos/ are deleted, so they stop shipping.
+const SIZED = /^(.+)-\d+\.webp$/
+for (const f of await readdir(OUT)) {
+  const m = f.match(SIZED)
+  if (m && !(m[1] in meta)) { await unlink(join(OUT, f)); console.log(`removed ${f}`) }
 }
 
 // Sizes the site reads for width/height attributes. Generated: do not edit by hand.

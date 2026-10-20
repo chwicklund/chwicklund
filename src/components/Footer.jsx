@@ -10,7 +10,7 @@ export default function Footer() {
         {Array.from({ length: 40 }, (_, i) => <span key={i} />)}
       </div>
       <div className="footer__photo">
-        <img {...photo(footer.photo, '50vw')} alt={footer.photoAlt} loading="lazy" />
+        <img {...photo(footer.photo, '50vw')} alt={footer.photoAlt} loading="lazy" style={{ '--focus': footer.photoFocus }} />
       </div>
       <div className="footer__menu">
         <p className="footer__wordmark">{person.wordmark}</p>

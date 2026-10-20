@@ -5,18 +5,6 @@
     2400
   ],
   "images": {
-    "Butterfly": {
-      "width": 5152,
-      "height": 2898
-    },
-    "City1": {
-      "width": 5439,
-      "height": 3626
-    },
-    "CityBlur": {
-      "width": 3840,
-      "height": 2160
-    },
     "Face": {
       "width": 1000,
       "height": 1000
@@ -25,33 +13,37 @@
       "width": 1925,
       "height": 1083
     },
-    "_CWW0668": {
-      "width": 4420,
-      "height": 2486
-    },
-    "_CWW1434-2": {
-      "width": 2793,
-      "height": 3491
-    },
-    "_CWW1434": {
-      "width": 5329,
-      "height": 2998
-    },
-    "_CWW1872": {
-      "width": 3200,
-      "height": 4000
-    },
     "_CWW2048": {
       "width": 2025,
       "height": 2531
     },
-    "_CWW2159": {
-      "width": 2170,
-      "height": 2712
+    "_CWW6792": {
+      "width": 1638,
+      "height": 2048
     },
-    "branchBird": {
-      "width": 3653,
-      "height": 2055
+    "_CWW6809": {
+      "width": 1638,
+      "height": 2048
+    },
+    "_CWW6910": {
+      "width": 2048,
+      "height": 1638
+    },
+    "_CWW7210": {
+      "width": 2048,
+      "height": 1638
+    },
+    "_CWW7458": {
+      "width": 2048,
+      "height": 1638
+    },
+    "_CWW7668": {
+      "width": 1638,
+      "height": 2048
+    },
+    "_CWW7935": {
+      "width": 2048,
+      "height": 1638
     },
     "cityWide": {
       "width": 5964,
@@ -65,29 +57,13 @@
       "width": 3200,
       "height": 4000
     },
-    "junco": {
-      "width": 2161,
-      "height": 2701
-    },
     "kittyWide": {
       "width": 3322,
       "height": 1869
     },
-    "mockBird": {
-      "width": 5402,
-      "height": 3039
-    },
-    "spider": {
-      "width": 3433,
-      "height": 1931
-    },
     "squirrelVogue": {
       "width": 5306,
       "height": 2985
-    },
-    "yellowBird": {
-      "width": 5250,
-      "height": 2953
     }
   }
 }

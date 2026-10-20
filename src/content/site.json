@@ -69,75 +69,63 @@
     "regionLabel": "Photographs, scroll or drag sideways",
     "items": [
       {
-        "file": "_CWW1872",
-        "alt": "A great horned owl in close-up, one yellow eye toward the camera"
+        "file": "_CWW6809",
+        "alt": "A male northern cardinal, bright red, perched among bare branches"
       },
       {
-        "file": "City1",
-        "alt": "Downtown Newark at night, office windows lit amber"
+        "file": "_CWW6910",
+        "alt": "A great blue heron in profile against a pale sky"
       },
       {
-        "file": "kittyWide",
-        "alt": "A tabby cat crouched by a wooden fence, staring at the lens"
+        "file": "_CWW7210",
+        "alt": "A scarlet macaw eating among green leaves"
+      },
+      {
+        "file": "_CWW6792",
+        "alt": "A female northern cardinal on a branch, warm brown with red wing feathers"
+      },
+      {
+        "file": "_CWW7458",
+        "alt": "A frigatebird with a white head gliding across a blue sky"
+      },
+      {
+        "file": "_CWW7935",
+        "alt": "The sun setting over the sea under an orange sky"
+      },
+      {
+        "file": "_CWW7668",
+        "alt": "A young tiger heron with barred feathers walking on sand"
       },
       {
         "file": "egretWalk",
         "alt": "A great egret stepping through shallow water by the reeds"
       },
       {
-        "file": "IMG_0082",
-        "alt": "Lower Manhattan towers over a marina"
+        "file": "kittyWide",
+        "alt": "A tabby cat crouched by a wooden fence, staring at the lens"
       },
       {
-        "file": "mockBird",
-        "alt": "A northern mockingbird among bright green leaves"
+        "file": "cityWide",
+        "alt": "The Newark skyline at night, office windows lit amber"
       },
       {
         "file": "fr33dom",
         "alt": "One World Trade Center rising over Lower Manhattan, seen across the water"
       },
       {
-        "file": "spider",
-        "alt": "A spider walking along a riveted railing against a blue sky"
-      },
-      {
-        "file": "Butterfly",
-        "alt": "A painted lady butterfly on orange and white flowers"
-      },
-      {
-        "file": "junco",
-        "alt": "A dark-eyed junco perched on a weathered plank"
-      },
-      {
-        "file": "yellowBird",
-        "alt": "A yellow warbler on a thin branch"
-      },
-      {
-        "file": "branchBird",
-        "alt": "A small streaked bird on a dark branch"
-      },
-      {
-        "file": "_CWW2159",
-        "alt": "A red-bellied woodpecker on the trunk of a tree"
-      },
-      {
         "file": "squirrelVogue",
         "alt": "A grey squirrel posing on a post above purple flowers"
       },
       {
-        "file": "_CWW0668",
-        "alt": "A warbler among yellow-green leaves"
-      },
-      {
-        "file": "_CWW1434-2",
-        "alt": "A mockingbird in a bush of yellow autumn leaves"
+        "file": "IMG_0082",
+        "alt": "Lower Manhattan towers over a marina"
       },
       {
         "file": "_CWW2048",
         "alt": "A bald eagle soaring against a pale sky"
       }
     ],
-    "intro": "Away from the keyboard I carry a long lens. Most of these were taken close to home in North Jersey: the marshes, the parks, and the river with Manhattan on the other side."
+    "intro": "Away from the keyboard I carry a long lens, around North Jersey and wherever I travel."
   },
   "about": {
     "heading": "About",
@@ -188,7 +176,7 @@
   },
   "stages": {
     "about": {
-      "photo": "City1",
+      "photo": "cityWide",
       "caption": "Newark at night, where I studied"
     },
     "contact": {
@@ -197,8 +185,8 @@
     }
   },
   "footer": {
-    "photo": "_CWW1872",
-    "photoAlt": "The great horned owl's eye, close up",
+    "photo": "_CWW6910",
+    "photoAlt": "The great blue heron's eye and beak, close up",
     "menu": [
       {
         "label": "Home",
@@ -249,6 +237,7 @@
         ]
       }
     ],
-    "legal": "© 2026 Charles Wicklund. Built with React and Vite, published on GitHub Pages."
+    "legal": "© 2026 Charles Wicklund. Built with React and Vite, published on GitHub Pages.",
+    "photoFocus": "56% 46%"
   }
 }

@@ -14,6 +14,7 @@ Portfolio of Charles Wicklund, built with React + Vite and deployed to GitHub Pa
   - `{ "kind": "self", "caption" }` shows this site's own JSON
 - `photos.items` — the drag row, in order. Portrait photos become tall frames; landscapes pair up or run wide.
 - `stages` — the photographs beside About and Contact.
+- `footer.photo` — the close-up beside the footer menu; `footer.photoFocus` is the point it zooms in on (`"x% y%"`).
 
 ## Colours
 
