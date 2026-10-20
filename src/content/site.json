@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "title": "Charles Wicklund — machine learning engineer and developer",
+    "description": "Charles Wicklund is a machine learning engineer in Hackensack, New Jersey. He trains computer vision models and builds the APIs, pipelines and dashboards around them."
+  },
+  "person": {
+    "name": "Charles Wicklund",
+    "wordmark": "charles wicklund",
+    "email": "chwicklund@gmail.com",
+    "github": {
+      "handle": "chwicklund",
+      "url": "https://github.com/chwicklund"
+    },
+    "place": "Hackensack, New Jersey",
+    "linkedin": {
+      "handle": "charleswicklund",
+      "url": "https://www.linkedin.com/in/charleswicklund/"
+    }
+  },
+  "nav": {
+    "links": [
+      {
+        "label": "Projects",
+        "href": "#projects"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
+    ],
+    "action": {
+      "label": "Write to me",
+      "href": "#contact"
+    }
+  },
+  "hero": {
+    "sentence": "Machine learning engineer in Hackensack, NJ. I train vision models and build the systems around them.",
+    "photo": "fr33dom",
+    "caption": "Manhattan from the Jersey side"
+  },
+  "projects": {
+    "heading": "Projects",
+    "intro": "Things I have built, starting with the page you are reading now. More are on the way.",
+    "linkLabel": "Visit",
+    "items": [
+      {
+        "id": "this-site",
+        "name": "chwicklund.com",
+        "disciplines": "Website",
+        "year": "2026",
+        "role": "Design and build",
+        "description": "This site. It is built with React and Vite and published on GitHub Pages, and every word on it lives in one JSON file, the same file you can see beside this paragraph.",
+        "stack": "React, Vite, GitHub Pages",
+        "url": "https://github.com/chwicklund/chwicklund",
+        "stage": {
+          "kind": "self",
+          "caption": "src/content/site.json, the hero"
+        }
+      }
+    ]
+  },
+  "photos": {
+    "heading": "You found the photos",
+    "countLabel": "frames",
+    "regionLabel": "Photographs, scroll or drag sideways",
+    "items": [
+      {
+        "file": "_CWW6809",
+        "alt": "A male northern cardinal, bright red, perched among bare branches"
+      },
+      {
+        "file": "_CWW6910",
+        "alt": "A great blue heron in profile against a pale sky"
+      },
+      {
+        "file": "_CWW7210",
+        "alt": "A scarlet macaw eating among green leaves"
+      },
+      {
+        "file": "_CWW6792",
+        "alt": "A female northern cardinal on a branch, warm brown with red wing feathers"
+      },
+      {
+        "file": "_CWW7458",
+        "alt": "A frigatebird with a white head gliding across a blue sky"
+      },
+      {
+        "file": "_CWW7935",
+        "alt": "The sun setting over the sea under an orange sky"
+      },
+      {
+        "file": "_CWW7668",
+        "alt": "A young tiger heron with barred feathers walking on sand"
+      },
+      {
+        "file": "egretWalk",
+        "alt": "A great egret stepping through shallow water by the reeds"
+      },
+      {
+        "file": "kittyWide",
+        "alt": "A tabby cat crouched by a wooden fence, staring at the lens"
+      },
+      {
+        "file": "cityWide",
+        "alt": "The Newark skyline at night, office windows lit amber"
+      },
+      {
+        "file": "fr33dom",
+        "alt": "One World Trade Center rising over Lower Manhattan, seen across the water"
+      },
+      {
+        "file": "squirrelVogue",
+        "alt": "A grey squirrel posing on a post above purple flowers"
+      },
+      {
+        "file": "IMG_0082",
+        "alt": "Lower Manhattan towers over a marina"
+      },
+      {
+        "file": "_CWW2048",
+        "alt": "A bald eagle soaring against a pale sky"
+      }
+    ],
+    "intro": "Away from the keyboard I carry a long lens, around North Jersey and wherever I travel."
+  },
+  "about": {
+    "heading": "About",
+    "portrait": "Face",
+    "portraitAlt": "Charles Wicklund",
+    "paragraphs": [
+      "Hi, I'm Charles. I live in Hackensack, New Jersey, and I've been building for the web since the first version of this site, which was hand-written HTML and a Bootstrap theme. I studied information systems at NJIT in Newark and graduated in 2023.",
+      "My title at EarthCam is data analyst; the work is machine learning engineering. I train computer vision models in PyTorch, decide which ones are good enough for production, and build the pipelines, APIs and monitoring that keep them running and honest.",
+      "Since January 2026 I also build for clients on my own: secure apps on AWS and Supabase with REST APIs and React dashboards on top, scoped with the client and carried from the first sketch through deployment and support.",
+      "I like the unglamorous parts best: the dataset tooling nobody asked for, the registry that makes a training run reproducible, the cost cut that nobody notices because nothing got slower.",
+      "Most of the work is patience, then one good result.",
+      "If you have a model to train or a system to build, I would like to hear about it. And if you keep scrolling, there is something else I do with my patience."
+    ],
+    "markedPhrase": "Most of the work is patience, then one good result.",
+    "signoff": "Charles Wicklund",
+    "role": "Machine learning engineer at EarthCam, Hackensack NJ"
+  },
+  "contact": {
+    "promptMuted": "A model to train, or a system to build?",
+    "promptInk": "Leave a note and I'll write back.",
+    "fieldLabel": "Your note",
+    "placeholder": "Hi Charles, …",
+    "submitLabel": "Send the note",
+    "subject": "Hello from chwicklund.com",
+    "after": "This opens your email app with the note filled in.",
+    "rows": [
+      {
+        "label": "Email",
+        "value": "chwicklund@gmail.com",
+        "href": "mailto:chwicklund@gmail.com"
+      },
+      {
+        "label": "GitHub",
+        "value": "chwicklund",
+        "href": "https://github.com/chwicklund"
+      },
+      {
+        "label": "LinkedIn",
+        "value": "charleswicklund",
+        "href": "https://www.linkedin.com/in/charleswicklund/"
+      },
+      {
+        "label": "Based in",
+        "value": "Hackensack, New Jersey",
+        "href": ""
+      }
+    ]
+  },
+  "stages": {
+    "about": {
+      "photo": "cityWide",
+      "caption": "Newark at night, where I studied"
+    },
+    "contact": {
+      "photo": "IMG_0082",
+      "caption": "Lower Manhattan, the marina"
+    }
+  },
+  "footer": {
+    "photo": "_CWW6910",
+    "photoAlt": "The great blue heron's eye and beak, close up",
+    "menu": [
+      {
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "label": "Projects",
+        "href": "#projects"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/chwicklund"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/charleswicklund/"
+      }
+    ],
+    "blocks": [
+      {
+        "heading": "Write",
+        "lines": [
+          {
+            "text": "chwicklund@gmail.com",
+            "href": "mailto:chwicklund@gmail.com"
+          }
+        ]
+      },
+      {
+        "heading": "Follow",
+        "lines": [
+          {
+            "text": "LinkedIn charleswicklund",
+            "href": "https://www.linkedin.com/in/charleswicklund/"
+          },
+          {
+            "text": "GitHub chwicklund",
+            "href": "https://github.com/chwicklund"
+          }
+        ]
+      }
+    ],
+    "legal": "© 2026 Charles Wicklund. Built with React and Vite, published on GitHub Pages.",
+    "photoFocus": "56% 46%"
+  }
+}
