@@ -55,7 +55,7 @@ export default function App() {
   }, [])
 
   const workFrames = [
-    { key: 'home', kind: 'photo', photo: hero.photo, caption: hero.caption, alt: hero.caption },
+    { key: 'home', kind: 'photo', photo: hero.photo, alt: hero.photoAlt },
     ...projects.items.map((p) => ({ key: `project-${p.id}`, ...p.stage })),
   ]
   const letterFrames = [
