@@ -63,9 +63,6 @@ export default function Stage({ frames, active }) {
           <Frame frame={f} eager={i === 0} />
         </div>
       ))}
-      <div className="stage__caption">
-        <p aria-live="polite">{current.caption}</p>
-      </div>
     </div>
   )
 }

@@ -161,16 +161,6 @@ button, input { font: inherit; color: inherit; }
 .frame__table th { color: var(--muted); font-weight: 500; }
 .frame__table tr:last-child th, .frame__table tr:last-child td { border-bottom: 0; }
 
-.stage__caption {
-  position: absolute; left: 20px; top: 20px; z-index: 2;
-  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-  max-width: calc(100% - 40px);
-}
-.stage__caption p {
-  background: var(--bg); color: var(--ink);
-  font-size: var(--step-small); line-height: 1; padding: 1em 1.25em; border-radius: 999px;
-}
-
 /* ---------------------------------------------------------------
    Hero: the card beside the photograph
 ---------------------------------------------------------------- */

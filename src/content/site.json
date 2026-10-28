@@ -40,7 +40,7 @@
   "hero": {
     "sentence": "Machine learning engineer in Hackensack, NJ. I train vision models and build the systems around them.",
     "photo": "fr33dom",
-    "caption": "Manhattan from the Jersey side"
+    "photoAlt": "Manhattan from the Jersey side"
   },
   "projects": {
     "heading": "Projects",
@@ -57,8 +57,42 @@
         "stack": "React, Vite, GitHub Pages",
         "url": "https://github.com/chwicklund/chwicklund",
         "stage": {
-          "kind": "self",
-          "caption": "src/content/site.json, the hero"
+          "kind": "self"
+        }
+      },
+      {
+        "id": "hoops-predictor",
+        "name": "Hoops Predictor",
+        "disciplines": "Machine learning, web app",
+        "year": "2026",
+        "role": "Data, models and build",
+        "description": "NBA predictions that run in your browser. Pick two teams and a date for the winner, win probability and projected score; switch players off the rotation and the odds update. A nightly job scrapes new games and logs each day's calls before tip-off, so the record of right and wrong is honest.",
+        "stack": "Python, scikit-learn, LightGBM, ONNX Runtime Web, React, Cloudflare",
+        "url": "https://basketball.chwicklund.com/game",
+        "stage": {
+          "kind": "table",
+          "rows": [
+            [
+              "Test season",
+              "2025-26, held out"
+            ],
+            [
+              "Winners picked",
+              "68.6%"
+            ],
+            [
+              "Always home team",
+              "55.5%"
+            ],
+            [
+              "Points, mean error",
+              "4.48 vs 4.66 for last-10 average"
+            ],
+            [
+              "Refresh",
+              "Nightly, retrained weekly"
+            ]
+          ]
         }
       }
     ]
@@ -125,7 +159,7 @@
         "alt": "A bald eagle soaring against a pale sky"
       }
     ],
-    "intro": "Away from the keyboard I carry a long lens, around North Jersey and wherever I travel."
+    "intro": "Away from the keyboard I carry a long lens, around North Jersey and wherever I travel. I took every photograph on this site, these and the ones you scrolled past to get here."
   },
   "about": {
     "heading": "About",
@@ -177,11 +211,11 @@
   "stages": {
     "about": {
       "photo": "cityWide",
-      "caption": "Newark at night, where I studied"
+      "alt": "Newark at night, where I studied"
     },
     "contact": {
       "photo": "IMG_0082",
-      "caption": "Lower Manhattan, the marina"
+      "alt": "Lower Manhattan, the marina"
     }
   },
   "footer": {
